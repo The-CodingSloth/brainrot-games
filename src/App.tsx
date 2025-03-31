@@ -9,6 +9,7 @@ import Title from './components/Title';
 import Modal from './components/Modal';
 import Toast from './components/Toast';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import { soundManager } from './utils/sound';
 
 function App() {
@@ -324,6 +325,7 @@ function App() {
           onKeyClick={handleKeyClick}
         />
       </main>
+      <Footer />
     </div>
   );
 }

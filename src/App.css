@@ -55,3 +55,79 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Footer styles */
+.footer {
+  margin-top: auto;
+  padding: 1.5rem 1rem;
+  background-color: var(--definition-bg);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.footer-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.footer-link:hover {
+  color: var(--correct-color);
+}
+
+.footer-link:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--correct-color);
+  transition: width 0.2s ease;
+}
+
+.footer-link:hover:after {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .footer-text {
+    margin-right: 0.5rem;
+  }
+}
