@@ -64,7 +64,7 @@ function App() {
       gameBoardRef.current.revealRow(-1); // Reset any ongoing animations
     }
 
-    console.log('New word:', newWord); // For debugging
+    //console.log('New word:', newWord); // For debugging
   }, []);
 
   // Initialize the game with a random word
