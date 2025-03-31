@@ -1,0 +1,216 @@
+/* Remove any unwanted yellow borders */
+/* * {
+  border-left-color: transparent !important;
+} */
+
+/* Target html and body specifically */
+/* html,
+body {
+  border: none !important;
+  border-left: none !important;
+} */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Theme Variables */
+  --background-color: #ffffff;
+  --text-color: #1a1a1b;
+  --border-color: #d3d6da;
+  --tile-text-color: #1a1a1b;
+  --tile-bg: #ffffff;
+  --key-bg-color: #d3d6da;
+  --key-text-color: #1a1a1b;
+  --key-absent-color: #787c7e;
+  --definition-bg: #f8f9fa;
+  --definition-shadow: rgba(0, 0, 0, 0.1);
+  --instructions-color: #666;
+  --modal-border: #eee;
+  --correct-color: #6aaa64;
+  --present-color: #c9b458;
+  --absent-color: #787c7e;
+  --title-color: #1a1a1b;
+  --modal-shadow: rgba(0, 0, 0, 0.2);
+  --toast-bg: #ff4444;
+  --toast-shadow: rgba(255, 68, 68, 0.3);
+  --new-game-btn-bg: #1a1a1b;
+  --new-game-btn-hover: #333;
+  --modal-backdrop: rgba(0, 0, 0, 0.7);
+  --success-bg: #6aaa64;
+  --error-bg: #787c7e;
+  --nav-bg: #ffffff;
+  --nav-border: #e0e0e0;
+  --nav-shadow: rgba(0, 0, 0, 0.1);
+}
+
+html.dark-mode {
+  --background-color: #121213;
+  --text-color: #ffffff;
+  --border-color: #3a3a3c;
+  --tile-text-color: #ffffff;
+  --tile-bg: #121213;
+  --key-bg-color: #818384;
+  --key-text-color: #ffffff;
+  --key-absent-color: #3a3a3c;
+  --definition-bg: #1a1a1b;
+  --definition-shadow: rgba(255, 255, 255, 0.1);
+  --instructions-color: #999;
+  --modal-border: #3a3a3c;
+  --title-color: #ffffff;
+  --modal-shadow: rgba(255, 255, 255, 0.1);
+  --toast-bg: #ff4444;
+  --toast-shadow: rgba(255, 68, 68, 0.3);
+  --new-game-btn-bg: #818384;
+  --new-game-btn-hover: #6e6e6e;
+  --modal-backdrop: rgba(0, 0, 0, 0.85);
+  --success-bg: #538d4e;
+  --error-bg: #3a3a3c;
+  --nav-bg: #1a1a1b;
+  --nav-border: #2a2a2b;
+  --nav-shadow: rgba(0, 0, 0, 0.2);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Adjust main content padding to account for fixed nav */
+.wordle-container {
+  padding-top: 4rem !important;
+}
+
+/* Mobile-first responsive design */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 2px 4px var(--nav-shadow);
+  z-index: 1000;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.nav-right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--definition-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: var(--border-color);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .wordle-container {
+    padding-top: 5rem !important;
+  }
+
+  .nav {
+    padding: 1rem 2rem;
+  }
+
+  .nav-title {
+    font-size: 1.5rem;
+  }
+
+  .nav-right {
+    gap: 1rem;
+  }
+
+  .nav-button {
+    font-size: 1.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

@@ -1,0 +1,532 @@
+[
+  {
+    "word": "aura",
+    "definition": "Overall vibe, energy, or personality.",
+    "length": 4
+  },
+  {
+    "word": "basic",
+    "definition": "Pertaining to those who prefer mainstream products, trends, and music. Derived from the term \"basic bitch\".",
+    "length": 5
+  },
+  {
+    "word": "beige flag",
+    "definition": "A warning sign that is neither positive nor negative, but rather depends on individual preferences or boundaries.",
+    "length": 10
+  },
+  {
+    "word": "BDE",
+    "definition": "Abbreviation for \"big dick energy\": confidence and ease.",
+    "length": 3
+  },
+  {
+    "word": "bestie",
+    "definition": "Short for \"best friend\". Sometimes used jokingly for someone the speaker/writer has no relationship with.",
+    "length": 6
+  },
+  {
+    "word": "bet",
+    "definition": "Yes; okay; \"it's on\".",
+    "length": 3
+  },
+  {
+    "word": "bffr",
+    "definition": "Abbreviation for \"Be fucking for real\", meaning \"be serious\" or in response to something incredible.",
+    "length": 4
+  },
+  {
+    "word": "big yikes",
+    "definition": "Used to describe something embarrassing or cringe, particularly in response to an offensive comment.",
+    "length": 9
+  },
+  {
+    "word": "blud",
+    "definition": "\"Friend\" or \"bro\". It is often used to describe people or animals that are out of place. Derived from Jamaican slang and believed to come from the term \"blood brothers\".",
+    "length": 4
+  },
+  {
+    "word": "boujee",
+    "definition": "High-class/materialistic. Derived from bourgeoisie.",
+    "length": 6
+  },
+  {
+    "word": "bop",
+    "definition": "A derogatory term, usually for females, suggesting excessive flirtatiousness or promiscuity. The term can also be used to describe an exceptionally good song.",
+    "length": 3
+  },
+  {
+    "word": "brainrot",
+    "definition": "The state of losing touch with the real world as a result of consuming hyperstimulating or chronically online content, or the constant use of seemingly meaningless buzzwords.",
+    "length": 8
+  },
+  {
+    "word": "bruh",
+    "definition": "Term used to express shock, embarrassment, or disappointment.",
+    "length": 4
+  },
+  {
+    "word": "bugging",
+    "definition": "Acting strangely or thinking that someone is hallucinating.",
+    "length": 7
+  },
+  {
+    "word": "bussin'",
+    "definition": "Extremely good, excellent. Also used to describe good food. Originated from African-American vernacular for good food.",
+    "length": 7
+  },
+  {
+    "word": "bussy",
+    "definition": "Portmanteau of \"boy\" and \"pussy\" (slang for the vagina). Effectively a man's anus.",
+    "length": 5
+  },
+  {
+    "word": "cap",
+    "definition": "To lie.",
+    "length": 3
+  },
+  {
+    "word": "caught in 4K",
+    "definition": "Refers to someone being indisputably caught doing something wrong or incriminating on camera or with evidence to prove it, referencing 4K resolution.",
+    "length": 12
+  },
+  {
+    "word": "clapback",
+    "definition": "Swift and witty response to an insult or critique.",
+    "length": 8
+  },
+  {
+    "word": "cook",
+    "definition": "To \"cook\" is to perform or do well. In contrast, when a person is \"cooked\", they are in danger, physically, emotionally, or of failure.",
+    "length": 4
+  },
+  {
+    "word": "crash out",
+    "definition": "To make a reckless or regrettable decision after a bout of rage or upset.",
+    "length": 9
+  },
+  {
+    "word": "crush",
+    "definition": "A slang word for a person, character, or object for which one feels sympathy, affection, or love.",
+    "length": 5
+  },
+  {
+    "word": "dab",
+    "definition": "A dance move used as a gesture of triumph.",
+    "length": 3
+  },
+  {
+    "word": "dank",
+    "definition": "Excellent, high-quality.",
+    "length": 4
+  },
+  {
+    "word": "dead/ded",
+    "definition": "Humorous to such an extent as to \"kill you\".",
+    "length": 8
+  },
+  {
+    "word": "delusionship",
+    "definition": "A relationship in which someone holds unrealistic or overly idealistic beliefs. A person who holds such beliefs is called a \"delulu\".",
+    "length": 12
+  },
+  {
+    "word": "drip",
+    "definition": "Trendy high-class fashion.",
+    "length": 4
+  },
+  {
+    "word": "era",
+    "definition": "A period of interests or priorities.",
+    "length": 3
+  },
+  {
+    "word": "face card",
+    "definition": "An attractive face. Sometimes defined as never declining or receding.",
+    "length": 9
+  },
+  {
+    "word": "failure management",
+    "definition": "Term used to describe someone being helped by an adult, parent, or teacher on a subject that the user already knows well. Used to tease and taunt others.",
+    "length": 18
+  },
+  {
+    "word": "fire",
+    "definition": "Term used to describe that something is impressive, good, or cool.",
+    "length": 4
+  },
+  {
+    "word": "fit/fit check",
+    "definition": "Term used to highlight or bring attention to one's outfit. \"Fit\" is a truncation of \"outfit\".",
+    "length": 13
+  },
+  {
+    "word": "finna",
+    "definition": "Short for \"fixing to\". The term has its roots in Southern American English, where \"fixing to\" has been used to mean \"getting ready to\" since the 18th century.",
+    "length": 5
+  },
+  {
+    "word": "flop",
+    "definition": "Opposite of \"bop.\"",
+    "length": 4
+  },
+  {
+    "word": "gagged",
+    "definition": "Shocked, amazed, or at a loss for words.",
+    "length": 6
+  },
+  {
+    "word": "ghost",
+    "definition": "To end communication or contact with someone without warning.",
+    "length": 5
+  },
+  {
+    "word": "girlboss",
+    "definition": "A female entrepreneur who succeeds in the male-dominated business world, an empowered woman.",
+    "length": 8
+  },
+  {
+    "word": "glaze",
+    "definition": "To hype, praise, or compliment someone so much that it becomes annoying or cringeworthy.",
+    "length": 5
+  },
+  {
+    "word": "glizzy",
+    "definition": "A hot dog. Popularized in 2020, possibly from the Washington metropolitan area, and possibly originating from the slang term \"glizzy\" for a Glock handgun.",
+    "length": 6
+  },
+  {
+    "word": "glow-up",
+    "definition": "A major improvement in one's self, usually an improvement in appearance, confidence, and style.",
+    "length": 7
+  },
+  {
+    "word": "GOAT",
+    "definition": "Acronym for \"greatest of all time\".",
+    "length": 4
+  },
+  {
+    "word": "Gucci",
+    "definition": "Meaning good, cool, fashionable, or excellent. Used to express approval or satisfaction for something. Originated from the luxury brand Gucci.",
+    "length": 5
+  },
+  {
+    "word": "hit different",
+    "definition": "To be better in a distinctive manner.",
+    "length": 12
+  },
+  {
+    "word": "huzz",
+    "definition": "A variation of the pejorative word \"hoes\" similarly used to objectify, degrade, and/or belittle women.",
+    "length": 4
+  },
+  {
+    "word": "ick",
+    "definition": "A sudden feeling of disgust or repulsion for someone one was previously attracted to.",
+    "length": 3
+  },
+  {
+    "word": "IJBOL",
+    "definition": "An acronym for \"I just burst out laughing\".",
+    "length": 5
+  },
+  {
+    "word": "I oop",
+    "definition": "Used to express shock, embarrassment, and or amusement.",
+    "length": 5
+  },
+  {
+    "word": "iPad kid",
+    "definition": "Derogatory term describing late Gen Z and Generation Alpha children who spend most of their time staring at phone or tablet screens.",
+    "length": 8
+  },
+  {
+    "word": "it's giving",
+    "definition": "Used to describe an attitude or connotation.",
+    "length": 11
+  },
+  {
+    "word": "iykyk",
+    "definition": "Acronym for \"If you know, you know\". Used to describe inside jokes.",
+    "length": 5
+  },
+  {
+    "word": "jit",
+    "definition": "A younger person. Usually used pejoratively for someone seen as inexperienced.",
+    "length": 3
+  },
+  {
+    "word": "Karen",
+    "definition": "Pejorative term for an obnoxious, angry, or entitled White woman.",
+    "length": 5
+  },
+  {
+    "word": "L",
+    "definition": "Short for \"loss,\" used to indicate failure, defeat, or something negative. Often contrasted with \"W\" (win).",
+    "length": 1
+  },
+  {
+    "word": "lit",
+    "definition": "Remarkable, interesting, fun, or amusing.",
+    "length": 3
+  },
+  {
+    "word": "looksmaxxing",
+    "definition": "An attempt (often pseudoscientific) to maximize physical attractiveness.",
+    "length": 12
+  },
+  {
+    "word": "lore",
+    "definition": "Backstory.",
+    "length": 4
+  },
+  {
+    "word": "main character",
+    "definition": "Someone who is or wants to be the star of their life. Often refers to someone who wants to be the center of attention.",
+    "length": 13
+  },
+  {
+    "word": "mew",
+    "definition": "A pseudoscientific method to restructure someone's jawline by pressing their tongue to the roof of their mouth.",
+    "length": 3
+  },
+  {
+    "word": "mid",
+    "definition": "Average or not special. Sometimes used in a negative or insulting way.",
+    "length": 3
+  },
+  {
+    "word": "mog",
+    "definition": "To look significantly more attractive than someone or something, causing them to appear inferior in comparison.",
+    "length": 3
+  },
+  {
+    "word": "moot/moots",
+    "definition": "Short for \"mutuals\" or \"mutual followers\".",
+    "length": 10
+  },
+  {
+    "word": "Netflix and chill",
+    "definition": "To watch Netflix with a romantic prospect, often with the expectation of sexual activity.",
+    "length": 16
+  },
+  {
+    "word": "nyaa",
+    "definition": "A cat noise, often used in contexts evoking cuteness. Derived from Japanese onomatopoeia for the vocalization of a domestic cat.",
+    "length": 4
+  },
+  {
+    "word": "no cap",
+    "definition": "\"This is true\"; \"I'm not lying\".",
+    "length": 6
+  },
+  {
+    "word": "OK boomer",
+    "definition": "Pejorative directed toward members of the Baby Boomer generation, used to dismiss or mock attitudes typically associated with baby boomers as out of date.",
+    "length": 9
+  },
+  {
+    "word": "oof",
+    "definition": "Used to express discomfort, surprise, dismay, or sympathy for someone else's pain.",
+    "length": 3
+  },
+  {
+    "word": "oomf",
+    "definition": "Abbreviation for \"One of My Followers\".",
+    "length": 4
+  },
+  {
+    "word": "opp",
+    "definition": "Short for opposition or enemies; describes an individual's opponents.",
+    "length": 3
+  },
+  {
+    "word": "out of pocket",
+    "definition": "To be crazy, wild, or extreme, sometimes to an extent that is considered too far.",
+    "length": 13
+  },
+  {
+    "word": "owned",
+    "definition": "Used to refer to defeat in a video game, or domination of an opposition.",
+    "length": 5
+  },
+  {
+    "word": "periodt",
+    "definition": "Used as an interjection to indicate that the preceding statement is final and that there is nothing more to be said about it; similar to the British term \"full stop\".",
+    "length": 7
+  },
+  {
+    "word": "pick-me",
+    "definition": "Someone who seeks validation by trying to stand out, often putting down others in their gender or group to gain favor or attention.",
+    "length": 7
+  },
+  {
+    "word": "pookie",
+    "definition": "An endearing nickname for a close friend or lover. Originates from a German term of endearment in the 1900s. Also used as a pet name.",
+    "length": 6
+  },
+  {
+    "word": "queen",
+    "definition": "A person (usually female) deemed impressive or praiseworthy.",
+    "length": 5
+  },
+  {
+    "word": "ratio",
+    "definition": "When a post, particularly on Twitter, receives more replies than retweets and likes combined. It can also been used for when a reply has better reception and more likes than the original post being replied to.",
+    "length": 5
+  },
+  {
+    "word": "red flag",
+    "definition": "A warning sign indicating behaviors or characteristics within a relationship that may potentially be harmful or toxic.",
+    "length": 8
+  },
+  {
+    "word": "rizz",
+    "definition": "One's charm/seduction skills. Derived from charisma.",
+    "length": 4
+  },
+  {
+    "word": "Roman Empire",
+    "definition": "A random event, person, incident, or thing that fascinates or intrigues one to the point that one is frequently thinking about it.",
+    "length": 12
+  },
+  {
+    "word": "salty",
+    "definition": "Used to describe someone who is behaving or expressing themselves in a resentful, bitter, or irritated manner.",
+    "length": 5
+  },
+  {
+    "word": "secure the bag",
+    "definition": "The act of someone working to reach their goals, usually referring to making money.",
+    "length": 14
+  },
+  {
+    "word": "sheesh",
+    "definition": "To praise someone when they are doing something good. The vowels are often emphasized, as in \"sheeesh\".",
+    "length": 6
+  },
+  {
+    "word": "shook",
+    "definition": "To be shocked, surprised, or bothered.",
+    "length": 5
+  },
+  {
+    "word": "simp",
+    "definition": "Sycophancy, being overly affectionate in pursuit of a sexual relationship.",
+    "length": 4
+  },
+  {
+    "word": "situationship",
+    "definition": "Refers to an ambiguous romantic relationship where all parties have mutual feelings for one another, but said feelings are not clearly defined; a mid-point between dating and not dating.",
+    "length": 13
+  },
+  {
+    "word": "sksksk",
+    "definition": "Used to convey happiness/laughter. A form of keysmashing.",
+    "length": 6
+  },
+  {
+    "word": "slaps",
+    "definition": "Used to refer to something that is perceived to be good, particularly used when referring to music.",
+    "length": 5
+  },
+  {
+    "word": "slay",
+    "definition": "To do something well.",
+    "length": 4
+  },
+  {
+    "word": "snatched",
+    "definition": "Amazing, attractive, or flawlessly styled. Sometimes used to particularly describe a person as having a narrow waist.",
+    "length": 8
+  },
+  {
+    "word": "stan",
+    "definition": "Supporting something to an extreme degree. Specifically used in cases of overzealous or obsessive support of celebrities.",
+    "length": 4
+  },
+  {
+    "word": "sus",
+    "definition": "Short term for suspect/suspicious.",
+    "length": 3
+  },
+  {
+    "word": "sussy baka",
+    "definition": "A combination of \"sus\" and \"baka\", the Japanese word for \"fool\".",
+    "length": 10
+  },
+  {
+    "word": "skill issue",
+    "definition": "Refers to a situation where a person's lack of ability or proficiency is seen as the cause of their failure or difficulty in completing a task.",
+    "length": 11
+  },
+  {
+    "word": "tea",
+    "definition": "Secret information or rumors. Originates from Black drag culture of the 1990s.",
+    "length": 3
+  },
+  {
+    "word": "touch grass",
+    "definition": "A way of telling someone to \"go outside\", usually after said person is believed to have been online for too long.",
+    "length": 11
+  },
+  {
+    "word": "tweaking",
+    "definition": "To be acting strangely or thinking that someone is hallucinating.",
+    "length": 8
+  },
+  {
+    "word": "unalive",
+    "definition": "A euphemism for the word \"kill\" or other death-related terms, often in the context of suicide.",
+    "length": 7
+  },
+  {
+    "word": "understood the assignment",
+    "definition": "To understand what was supposed to be done; to do something well.",
+    "length": 26
+  },
+  {
+    "word": "uwu",
+    "definition": "Used to portray happiness or one wanting to appear cute. Used more or less as an expression.",
+    "length": 3
+  },
+  {
+    "word": "valid",
+    "definition": "Socially acceptable. Gained prominence in Tumblr (and later TikTok) discourse.",
+    "length": 5
+  },
+  {
+    "word": "vibe check",
+    "definition": "To check one's personality or attitude.",
+    "length": 10
+  },
+  {
+    "word": "VSCO girl",
+    "definition": "A stereotypical white girl who often takes trendy and \"basic\" pictures of herself to later edit and post online.",
+    "length": 9
+  },
+  {
+    "word": "W",
+    "definition": "Short for \"win,\" used to indicate success, victory, or something positive. Often contrasted with \"L\" (loss).",
+    "length": 1
+  },
+  {
+    "word": "wig",
+    "definition": "To do something so well as to \"make one's wig fly off\". Unrelated to wig out.",
+    "length": 3
+  },
+  {
+    "word": "who is this diva?",
+    "definition": "An affectionate rhetorical question used to compliment people who positively embody diva-like qualities such as boldness, style, and/or confidence.",
+    "length": 16
+  },
+  {
+    "word": "yap",
+    "definition": "To talk too much, especially without significant meaning.",
+    "length": 3
+  },
+  {
+    "word": "yeet",
+    "definition": "To throw something with force and without regard. Also used as a generic positive exclamation.",
+    "length": 4
+  }
+]
