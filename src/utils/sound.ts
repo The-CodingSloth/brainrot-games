@@ -10,6 +10,7 @@ class SoundManager {
       fail: new Audio(
         new URL('../assets/sounds/fail.mp3', import.meta.url).href
       ),
+      flashbang: new Audio(new URL('../assets/sounds/flashbang.mp3', import.meta.url).href),
     };
   }
 
@@ -17,7 +18,7 @@ class SoundManager {
     this.enabled = enabled;
   }
 
-  play(soundName: 'win' | 'fail') {
+  play(soundName: 'win' | 'fail' | 'flashbang') {
     if (!this.enabled) return;
 
     const sound = this.sounds[soundName];

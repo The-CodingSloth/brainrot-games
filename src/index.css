@@ -234,3 +234,13 @@ button:focus-visible {
     height: 2.5rem;
   }
 }
+
+/* Flashbang animation */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  5% { opacity: 1; } /* Flash at full brightness */
+  10% { opacity: 0.9; } /* Slight dip for a flash effect */
+  15% { opacity: 1; } /* Flash back to full brightness */
+  40% { opacity: 0.95; } /* Start slow fade */
+  100% { opacity: 0; }
+}
