@@ -1,14 +1,6 @@
-#root {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0.5rem;
+*{
+  box-sizing: border-box;
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  #root {
-    max-width: 1280px;
-  }
 }
 
 .app {
@@ -64,12 +56,6 @@
   border-top: 1px solid var(--border-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 
 .footer-content {
