@@ -40,6 +40,11 @@ function App() {
   // Track the space positions in the target word
   const [spacePositions, setSpacePositions] = useState<number[]>([]);
 
+  // Add state to track if device is mobile
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  // Track screen width for responsive elements
+  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+
   const startNewGame = useCallback(() => {
     const newWord = getRandomWord();
     setTargetWord(newWord);
@@ -160,6 +165,9 @@ function App() {
     (event: KeyboardEvent) => {
       if (gameOver) return;
 
+      // Skip if Alt key is held down (used for scrolling)
+      if (event.altKey) return;
+
       const key = event.key.toUpperCase();
 
       if (key === 'ENTER') {
@@ -267,8 +275,60 @@ function App() {
     }
   }, [showModal, gameWon]);
 
+  // Detect if device is mobile and track screen width
+  useEffect(() => {
+    const checkMobile = () => {
+      // Check for touch capability and screen width
+      const width = window.innerWidth;
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isSmallScreen = width < 600;
+      
+      setScreenWidth(width);
+      setIsMobile(isTouchDevice || isSmallScreen);
+    };
+    
+    // Check on initial load
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Prevent zoom on double tap for mobile devices
+  useEffect(() => {
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('touchstart', handleTouchStart, { passive: false });
+    
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+    };
+  }, []);
+
+  // Prevent bounce scrolling on iOS
+  useEffect(() => {
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
+    
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    
+    return () => {
+      document.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   return (
-    <div className="app">
+    <div className="app" style={{padding:0}}>
       <header>
         <Nav
           isDarkMode={isDarkMode}
@@ -286,7 +346,7 @@ function App() {
         isWin={gameWon}
       />
 
-      <main className="wordle-container">
+      <main className={`wordle-container ${isMobile ? 'mobile' : ''}`}>
         <Title />
         <Toast
           isVisible={showToast}
@@ -315,6 +375,8 @@ function App() {
               setShowModal(true);
             }
           }}
+          isMobile={isMobile}
+          screenWidth={screenWidth}
         />
 
         <Keyboard

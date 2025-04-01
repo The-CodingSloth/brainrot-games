@@ -11,27 +11,28 @@ const Toast: React.FC<ToastProps> = ({ message, isVisible }) => {
       {isVisible && (
         <motion.div
           className="toast-container"
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: 'auto', opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 25,
-            opacity: { duration: 0.2 },
-          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
         >
           <motion.div
             className="toast"
             role="alert"
             aria-live="assertive"
             aria-atomic="true"
-            initial={{ scale: 0.85 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0.85 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+            initial={{ y: -20, opacity: 0, scale: 0.9 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: -20, opacity: 0, scale: 0.9 }}
+            transition={{ 
+              type: 'spring', 
+              stiffness: 400, 
+              damping: 25,
+              opacity: { duration: 0.2 }
+            }}
           >
             <motion.span
+              className="toast-icon"
               aria-hidden="true"
               initial={{ scale: 0.5 }}
               animate={{ scale: 1 }}
