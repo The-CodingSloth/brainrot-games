@@ -1,22 +1,21 @@
-import React from 'react';
 import { motion } from 'motion/react';
 
-interface KeyboardProps {
-  guesses: string[];
-  currentRow: number;
-  targetWord: string;
-  gameOver: boolean;
-  onKeyClick: (key: string) => void;
-}
+// interface KeyboardProps {
+//   guesses: string[];
+//   currentRow: number;
+//   targetWord: string;
+//   gameOver: boolean;
+//   onKeyClick: (key: string) => void;
+// }
 
-const Keyboard: React.FC<KeyboardProps> = ({
+const Keyboard = ({
   guesses,
   currentRow,
   targetWord,
   gameOver,
   onKeyClick,
 }) => {
-  const getLetterStatus = (letter: string): string => {
+  const getLetterStatus = (letter) => {
     // Skip special keys
     if (letter === 'ENTER' || letter === 'BACKSPACE') {
       return '';
@@ -53,15 +52,15 @@ const Keyboard: React.FC<KeyboardProps> = ({
     ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'BACKSPACE'],
   ];
 
-  const handleKeyClick = (key: string) => {
+  const handleKeyClick = (key) => {
     if (!gameOver) {
       onKeyClick(key);
     }
   };
 
   const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLButtonElement>,
-    key: string
+    e,
+    key
   ) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();

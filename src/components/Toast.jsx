@@ -1,11 +1,11 @@
 import { motion, AnimatePresence } from 'motion/react';
 
-interface ToastProps {
-  message: string;
-  isVisible: boolean;
-}
+// interface ToastProps {
+//   message: string;
+//   isVisible: boolean;
+// }
 
-const Toast: React.FC<ToastProps> = ({ message, isVisible }) => {
+const Toast = ({ message, isVisible }) => {
   return (
     <AnimatePresence>
       {isVisible && (

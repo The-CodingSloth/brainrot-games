@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import './App.css';
 import './Wordle.css';
 import { getRandomWord, getWordDefinition } from './wordList';
-import GameBoard, { GameBoardRef } from './components/GameBoard';
+import GameBoard from './components/GameBoard';
 import Keyboard from './components/Keyboard';
 import Title from './components/Title';
 import Modal from './components/Modal';
@@ -13,16 +13,16 @@ import Footer from './components/Footer';
 import { soundManager } from './utils/sound';
 
 function App() {
-  const [targetWord, setTargetWord] = useState<string>('');
-  const [wordDefinition, setWordDefinition] = useState<string>('');
-  const [guesses, setGuesses] = useState<string[]>(Array(6).fill(''));
-  const [currentGuess, setCurrentGuess] = useState<string>('');
-  const [currentRow, setCurrentRow] = useState<number>(0);
-  const [gameOver, setGameOver] = useState<boolean>(false);
-  const [gameWon, setGameWon] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState<boolean>(false);
-  const [showToast, setShowToast] = useState<boolean>(false);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+  const [targetWord, setTargetWord] = useState('');
+  const [wordDefinition, setWordDefinition] = useState('');
+  const [guesses, setGuesses] = useState(Array(6).fill(''));
+  const [currentGuess, setCurrentGuess] = useState('');
+  const [currentRow, setCurrentRow] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
+  const [gameWon, setGameWon] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
     // Check for saved preference first, then fall back to system preference
     const savedPreference = localStorage.getItem('darkMode');
     if (savedPreference !== null) {
@@ -35,10 +35,10 @@ function App() {
     return false;
   });
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
-  const gameBoardRef = useRef<GameBoardRef>(null);
+  const gameBoardRef = useRef(null);
 
   // Track the space positions in the target word
-  const [spacePositions, setSpacePositions] = useState<number[]>([]);
+  const [spacePositions, setSpacePositions] = useState([]);
 
   const startNewGame = useCallback(() => {
     const newWord = getRandomWord();
@@ -52,7 +52,7 @@ function App() {
     setShowModal(false);
 
     // Reset space positions
-    const newSpacePositions: number[] = [];
+    const newSpacePositions = [];
     for (let i = 0; i < newWord.length; i++) {
       if (newWord[i] === ' ') {
         newSpacePositions.push(i);
@@ -85,7 +85,7 @@ function App() {
 
   // Function to get the actual guess length without automatic spaces
   const getEffectiveGuessLength = useCallback(
-    (guess: string): number => {
+    (guess) => {
       // Filter out spaces that match the target word's space positions
       let effectiveLength = 0;
       for (let i = 0; i < guess.length; i++) {
@@ -145,7 +145,7 @@ function App() {
 
   // Get the next position to type at (skipping space positions)
   const getNextTypePosition = useCallback(
-    (currentLength: number): number => {
+    (currentLength) => {
       // If the next position is a space, skip it
       if (spacePositions.includes(currentLength)) {
         return getNextTypePosition(currentLength + 1);
@@ -157,7 +157,7 @@ function App() {
 
   // Handle keyboard input
   const handleKeyDown = useCallback(
-    (event: KeyboardEvent) => {
+    (event) => {
       if (gameOver) return;
 
       const key = event.key.toUpperCase();
@@ -210,7 +210,7 @@ function App() {
 
   // Handle on-screen keyboard clicks
   const handleKeyClick = useCallback(
-    (key: string) => {
+    (key) => {
       if (gameOver) return;
 
       if (key === 'ENTER') {

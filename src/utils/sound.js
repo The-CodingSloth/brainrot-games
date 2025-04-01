@@ -1,6 +1,4 @@
 class SoundManager {
-  private sounds: { [key: string]: HTMLAudioElement } = {};
-  private enabled: boolean = true;
 
   constructor() {
     // Pre-load sounds
@@ -13,11 +11,11 @@ class SoundManager {
     };
   }
 
-  setEnabled(enabled: boolean) {
+  setEnabled(enabled) {
     this.enabled = enabled;
   }
 
-  play(soundName: 'win' | 'fail') {
+  play(soundName) {
     if (!this.enabled) return;
 
     const sound = this.sounds[soundName];

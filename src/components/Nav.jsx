@@ -1,14 +1,13 @@
-import React from 'react';
 import { motion } from 'motion/react';
 
-interface NavProps {
-  isDarkMode: boolean;
-  isSoundEnabled: boolean;
-  onThemeToggle: () => void;
-  onSoundToggle: () => void;
-}
+// interface NavProps {
+//   isDarkMode: boolean;
+//   isSoundEnabled: boolean;
+//   onThemeToggle: () => void;
+//   onSoundToggle: () => void;
+// }
 
-const Nav: React.FC<NavProps> = ({
+const Nav = ({
   isDarkMode,
   isSoundEnabled,
   onThemeToggle,

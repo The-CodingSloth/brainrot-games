@@ -1,5 +1,5 @@
 import { useState, useEffect, useImperativeHandle, forwardRef } from 'react';
-import { motion, TargetAndTransition } from 'motion/react';
+import { motion } from 'motion/react';
 
 // Animation configurations for different elements and states
 const ANIMATIONS = {
@@ -13,7 +13,7 @@ const ANIMATIONS = {
   ROW: {
     initial: { opacity: 0, y: -10 }, // Start invisible and slightly above position
     animate: { opacity: 1, y: 0 }, // Fade in and move to correct position
-    transition: (delay: number) => ({ delay, duration: 0.3 }),
+    transition: (delay) => ({ delay, duration: 0.3 }),
   },
   // Different animation states for individual tiles
   TILE: {
@@ -27,7 +27,7 @@ const ANIMATIONS = {
       scale: [1, 0.8, 5, 1], // Dramatic pop: normal → shrink → expand → normal
       rotateX: [0, 10, -10, 0], // Shake effect
       opacity: [1, 0.5, 1], // Subtle fade in/out
-      transition: (wordLength: number, tileIndex: number) => ({
+      transition: (wordLength, tileIndex) => ({
         scale: {
           duration: Math.max(
             0.08,
@@ -67,42 +67,30 @@ const ANIMATIONS = {
       },
     },
   },
-} as const;
+};
 
-interface GameBoardProps {
-  guesses: string[];
-  currentGuess: string;
-  currentRow: number;
-  targetWord: string;
-  onRevealComplete: () => void;
-}
-
-export interface GameBoardRef {
-  revealRow: (row: number) => void;
-}
-
-const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
+const GameBoard = forwardRef(
   (
     { guesses, currentGuess, currentRow, targetWord, onRevealComplete },
     ref
   ) => {
     const wordLength = targetWord.length;
     // Track which row is currently having its letters revealed
-    const [revealingRow, setRevealingRow] = useState<number | null>(null);
+    const [revealingRow, setRevealingRow] = useState(null);
     // Store tile states (correct, present, absent) for each position
-    const [tileStates, setTileStates] = useState<{ [key: string]: string }>({});
+    const [tileStates, setTileStates] = useState({});
     // Track which specific tile (column) is being revealed within the revealing row
-    const [revealingTile, setRevealingTile] = useState<number | null>(null);
+    const [revealingTile, setRevealingTile] = useState(null);
     // Track the most recently typed letter for typing animation
-    const [lastTypedIndex, setLastTypedIndex] = useState<number | null>(null);
+    const [lastTypedIndex, setLastTypedIndex] = useState(null);
     // Track which tiles have had their animations completed
-    const [revealedTiles, setRevealedTiles] = useState<Set<string>>(new Set());
+    const [revealedTiles, setRevealedTiles] = useState(new Set());
     // Add a new state to track overall game status for screen readers
-    const [gameStatus, setGameStatus] = useState<string>('');
+    const [gameStatus, setGameStatus] = useState('');
 
     // Expose the revealRow method to parent component
     useImperativeHandle(ref, () => ({
-      revealRow: (row: number) => {
+      revealRow: (row) => {
         // If row is -1, reset all states
         if (row === -1) {
           setRevealingRow(null);
@@ -225,7 +213,7 @@ const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
     }, [revealingRow, revealingTile, gameStatus]);
 
     // Determine the visual state class for each tile
-    const getTileClass = (rowIndex: number, colIndex: number) => {
+    const getTileClass = (rowIndex, colIndex) => {
       const tileKey = `${rowIndex}-${colIndex}`;
 
       // Return color state for tiles that have completed their reveal animation
@@ -248,21 +236,21 @@ const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
     };
 
     // Check if a specific tile is currently being revealed
-    const isRevealing = (rowIndex: number, colIndex: number) => {
+    const isRevealing = (rowIndex, colIndex) => {
       if (targetWord[colIndex] === ' ') return false; // Don't animate spaces
       return rowIndex === revealingRow && colIndex === revealingTile;
     };
 
     // Check if the target position should be a space
-    const isTargetSpace = (colIndex: number) => targetWord[colIndex] === ' ';
+    const isTargetSpace = (colIndex) => targetWord[colIndex] === ' ';
 
     // Determine the appropriate background color for a tile
     const getTileBackgroundColor = (
-      _rowIndex: number, // Prefix with underscore to indicate it's not used
-      _colIndex: number, // Prefix with underscore to indicate it's not used
-      isSpaceTile: boolean,
-      tileClass: string,
-      revealing: boolean
+      _rowIndex, // Prefix with underscore to indicate it's not used
+      _colIndex, // Prefix with underscore to indicate it's not used
+      isSpaceTile,
+      tileClass,
+      revealing
     ) => {
       // For space tiles, return a specific color that matches the background
       if (isSpaceTile) return 'var(--background-color)';
@@ -284,7 +272,7 @@ const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
     };
 
     // Update the method for determining tile status
-    const getTileStatusText = (tileClass: string): string => {
+    const getTileStatusText = (tileClass) => {
       if (tileClass === 'correct') {
         return 'Correct';
       } else if (tileClass === 'present') {
@@ -387,7 +375,7 @@ const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
                             ? bgColor // Just use the final color immediately
                             : bgColor,
                           // Don't set border inline, let CSS classes handle it
-                        } as TargetAndTransition
+                        }
                       }
                     >
                       {targetWord[colIndex] !== ' ' && (

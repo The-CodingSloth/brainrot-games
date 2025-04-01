@@ -1,12 +1,11 @@
-import React from 'react';
 import { motion } from 'motion/react';
 
-interface MessageProps {
-  message: string;
-  gameWon: boolean;
-}
+// interface MessageProps {
+//   message: string;
+//   gameWon: boolean;
+// }
 
-const Message: React.FC<MessageProps> = ({ message, gameWon }) => {
+const Message = ({ message, gameWon }) => {
   return (
     message && (
       <motion.div

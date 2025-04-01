@@ -1,7 +1,6 @@
-import React from 'react';
 import { motion } from 'motion/react';
 
-const Title: React.FC = () => {
+const Title = () => {
   return (
     <header className="game-header">
       <motion.h1

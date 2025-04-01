@@ -1,16 +1,16 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useEffect, useRef } from 'react';
 
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  word: string;
-  definition: string;
-  isWin: boolean;
-}
+// interface ModalProps {
+//   isOpen: boolean;
+//   onClose: () => void;
+//   title: string;
+//   word: string;
+//   definition: string;
+//   isWin: boolean;
+// }
 
-const Modal: React.FC<ModalProps> = ({
+const Modal = ({
   isOpen,
   onClose,
   title,
@@ -18,8 +18,8 @@ const Modal: React.FC<ModalProps> = ({
   definition,
   isWin,
 }) => {
-  const modalRef = useRef<HTMLDivElement>(null);
-  const modalContentRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef(null);
+  const modalContentRef = useRef(null);
 
   // Focus trap and keyboard navigation
   useEffect(() => {
@@ -29,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({
     }
   }, [isOpen]);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Escape') {
       // Don't auto-restart when pressing Escape
       e.preventDefault();
