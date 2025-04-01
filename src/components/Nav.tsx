@@ -17,6 +17,7 @@ const Nav: React.FC<NavProps> = ({
   return (
     <nav className="nav" role="navigation" aria-label="Main navigation">
       <div className="nav-left">
+        <img src="/favico.png" alt="Word Tuah Logo" className="nav-logo" width={30} height={30}/>
         <h1 className="nav-title">Word Tuah</h1>
       </div>
       <div className="nav-right">

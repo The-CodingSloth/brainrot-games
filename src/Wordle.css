@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   position: relative;
   box-sizing: border-box;
 }
@@ -25,13 +25,69 @@
   text-align: center;
 }
 
+.game-board-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Default to hidden instead of auto */
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 15px;
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  position: relative;
+  padding-bottom: 5px; /* Space for potential scrollbar */
+}
+
+/* Only enable scrolling when content is actually scrollable */
+.game-board-wrapper.is-scrollable {
+  overflow-x: auto;
+}
+
+.game-board-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 .game-board {
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   gap: 5px;
-  margin-bottom: 20px;
-  width: 100%;
+  width: max-content; /* Allow to grow beyond container if needed */
+  margin: 0 auto;
   justify-content: center;
+  padding: 0 5px; /* Add padding for better visibility on edges */
+}
+
+/* For words of 6 or fewer letters, center the board and prevent scrolling */
+.game-board.short-word {
+  min-width: 100%; /* At least fill the container */
+  margin: 0 auto; /* Center the game board */
+  justify-content: center; /* Ensure tiles are centered */
+  width: auto; /* Reset width to let container determine size */
+  max-width: 100%;
+}
+
+/* Remove padding for short words - not needed for non-scrolling words */
+.game-board.short-word .row {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Adjust tile size for smaller screens with short words */
+@media (max-width: 350px) {
+  .game-board.short-word .tile {
+    width: 38px; /* Slightly larger than the default mobile size */
+    height: 38px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Center shorter words on larger screens */
+@media (min-width: 600px) {
+  .game-board.short-word {
+    max-width: 600px; /* Limit width for better centering */
+    margin: 0 auto;
+  }
 }
 
 .row {
@@ -41,13 +97,13 @@
 }
 
 .tile {
-  width: 30px;
-  height: 30px;
+  width: 42px;
+  height: 42px;
   border: 2px solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   text-transform: uppercase;
   color: var(--tile-text-color);
@@ -61,7 +117,45 @@
   width: 10px;
   background-color: transparent !important;
   pointer-events: none;
-  margin: 0 2px;
+  margin: 0 1px;
+  box-shadow: none !important; /* Never show box shadow on space tiles */
+  outline: none !important; /* Never show outline on space tiles */
+}
+
+/* Space tiles should never be highlighted or treated as active */
+.space-tile.active-tile {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Ensure space tiles don't get any state colors */
+.space-tile.correct,
+.space-tile.present,
+.space-tile.absent {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+/* Small mobile styles */
+@media (max-width: 350px) {
+  .wordle-container {
+    padding: 0 0.25rem;
+  }
+  
+  .tile {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    border-width: 1.5px;
+  }
+  
+  .game-board-wrapper {
+    margin-bottom: 10px;
+  }
+  
+  .row {
+    gap: 4px;
+  }
 }
 
 /* Tablet styles */
@@ -134,22 +228,24 @@
   max-width: 500px;
   margin: 0.5rem auto;
   user-select: none;
+  padding: 0 0.25rem;
+  box-sizing: border-box;
 }
 
 .keyboard-row {
   display: flex;
   justify-content: center;
-  margin: 0.25rem 0;
-  gap: 0.25rem;
+  margin: 0.2rem 0;
+  gap: 0.2rem;
 }
 
 .key {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.25rem;
+  padding: 0.25rem 0;
   min-width: 1.5rem;
-  height: 2.5rem;
+  height: 3rem;
   border-radius: 4px;
   background-color: var(--key-bg-color);
   color: var(--key-text-color);
@@ -157,47 +253,41 @@
   cursor: pointer;
   text-transform: uppercase;
   flex: 1;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
   border: none;
   touch-action: manipulation;
 }
 
-/* Tablet styles for keyboard */
-@media (min-width: 600px) {
-  .keyboard {
-    margin: 0.75rem auto;
-  }
-
-  .key {
-    padding: 0.375rem;
-    min-width: 1.75rem;
-    height: 2.75rem;
-    font-size: 0.8rem;
-  }
+.key.wide {
+  flex: 1.5;
+  font-size: 0.7rem;
 }
 
-/* Desktop styles for keyboard */
-@media (min-width: 900px) {
+/* Small mobile styles for keyboard */
+@media (max-width: 350px) {
   .keyboard {
-    margin: 1rem auto;
+    margin: 0.25rem auto;
   }
-
+  
+  .keyboard-row {
+    margin: 0.15rem 0;
+    gap: 0.15rem;
+  }
+  
   .key {
-    padding: 0.5rem;
-    min-width: 2rem;
-    height: 3rem;
-    font-size: 0.875rem;
+    height: 2.75rem;
+    font-size: 0.7rem;
+    padding: 0.15rem 0;
+  }
+  
+  .key.wide {
+    font-size: 0.6rem;
   }
 }
 
 .key:hover {
   opacity: 0.9;
-}
-
-.key.wide {
-  flex: 1.5;
-  font-size: 0.75rem;
 }
 
 .key.space-key {
@@ -247,16 +337,15 @@
 }
 
 .definition {
+  padding: 0.75rem;
   background-color: var(--definition-bg);
-  padding: 10px 15px;
   border-radius: 8px;
-  margin: 10px;
-  text-align: center;
+  margin: 0.75rem 0;
+  box-shadow: 0 2px 4px var(--definition-shadow);
   max-width: 100%;
+  overflow-wrap: break-word;
   width: 100%;
   box-sizing: border-box;
-  box-shadow: 0 2px 4px var(--definition-shadow);
-  border: 1px solid var(--border-color);
 }
 
 @media (min-width: 600px) {
@@ -326,16 +415,19 @@
 .modal-content {
   position: relative;
   background-color: var(--background-color);
-  padding: 1.5rem;
-  border-radius: 12px;
+  padding: 1.25rem;
+  border-radius: 8px;
   max-width: 90%;
-  width: 85%;
-  z-index: 2001;
+  width: 350px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
   box-shadow: 0 4px 20px var(--modal-shadow);
+  border: 1px solid var(--modal-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
   margin: 0 auto;
   transform: translateY(-10%);
   color: var(--text-color);
-  border: 1px solid var(--border-color);
 }
 
 @media (min-width: 600px) {
@@ -457,31 +549,43 @@
 }
 
 .toast-container {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
+  z-index: 1001;
+  pointer-events: none;
 }
 
 .toast {
   background-color: var(--toast-bg);
   color: white;
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  font-weight: bold;
+  box-shadow: 0 2px 10px var(--toast-shadow);
   font-size: 0.9rem;
-  box-shadow: 0 4px 15px var(--toast-shadow);
+  text-align: center;
+  max-width: 90%;
+  width: auto;
+  white-space: nowrap;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 10px;
-  min-width: 150px;
   justify-content: center;
-  text-align: center;
-  margin: 10px 0;
+  gap: 0.5rem;
 }
 
-.toast span {
-  font-size: 1rem;
+.toast-icon {
+  display: inline-flex;
+  margin-right: 0.5rem;
+}
+
+.toast-message {
+  font-weight: 500;
 }
 
 @media (min-width: 600px) {
@@ -491,7 +595,7 @@
     min-width: 200px;
   }
 
-  .toast span {
+  .toast-icon {
     font-size: 1.2rem;
   }
 }
@@ -552,3 +656,420 @@
 }
 
 /* The development environment's yellow outline still might appear but should be fine for dev */
+
+/* Mobile-specific styles */
+.wordle-container.mobile {
+  padding-bottom: 2rem;
+}
+
+.wordle-container.mobile .definition {
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wordle-container.mobile .key {
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
+}
+
+.wordle-container.mobile .key:active {
+  opacity: 0.7;
+  transform: scale(0.97);
+}
+
+@media (max-height: 700px) {
+  .wordle-container {
+    padding-top: 3.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .definition {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .game-board {
+    margin-bottom: 8px;
+  }
+}
+
+/* Ensure buttons are easy to tap on mobile */
+.key, .modal-button, .nav-button {
+  min-height: 44px; /* Minimum tap target size recommended by WCAG */
+}
+
+/* Active tile styling for better visibility during typing */
+.tile.active-tile {
+  border-color: var(--correct-color);
+  box-shadow: 0 0 5px var(--correct-color);
+}
+
+/* Mobile-specific styles */
+.wordle-container.mobile .game-board-wrapper {
+  /* Increase touch area for better scrolling */
+  padding: 5px 0;
+}
+
+.game-board-wrapper.mobile.is-scrollable {
+  /* Optimize scrolling performance for mobile */
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
+  /* Add visual indicators that content is scrollable */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.game-board-wrapper.mobile .game-board {
+  /* Add extra space at the sides for mobile scrolling */
+  padding: 0 10px;
+}
+
+/* For very long words on mobile, add a hint that you can scroll horizontally */
+@media (max-width: 599px) {
+  
+  /* Position scroll indicators to be visible over the gradients */
+  .scroll-indicator.left {
+    left: 8px;
+    z-index: 30;
+  }
+  
+  .scroll-indicator.right {
+    right: 8px;
+    z-index: 30;
+  }
+}
+
+/* For extremely long words (more than 14 letters), adjust tile size on mobile */
+@media (max-width: 599px) {
+  .tile:nth-child(n+15) {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile scroll indicators */
+.scroll-indicator {
+  position: fixed; /* Stick to viewport */
+  top: 45%;
+  height: 60px;
+  width: 18px;
+  border-radius: 12px;
+  background-color: var(--key-bg-color);
+  color: var(--key-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0; /* Hide by default */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  /* Align with game board height */
+  margin-top: -40px; /* Move up slightly to align with game board */
+}
+
+/* Only show scroll indicators when content is actually scrollable AND on mobile */
+.game-board-wrapper.is-scrollable .scroll-indicator {
+  opacity: 0.6;
+}
+
+/* More prominent indicators for very small screens */
+.scroll-indicator.prominent {
+  width: 12px;
+  height: 50px;
+  background-color: var(--present-color);
+  color: white;
+  opacity: 0.7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-indicator.left {
+  left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-image: linear-gradient(to right, transparent, var(--key-bg-color) 40%);
+}
+
+.scroll-indicator.right {
+  right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-image: linear-gradient(to left, transparent, var(--key-bg-color) 40%);
+}
+
+/* For very small screens, adjust indicator positioning */
+.game-board-wrapper.very-small .scroll-indicator.left {
+  left: 0;
+}
+
+.game-board-wrapper.very-small .scroll-indicator.right {
+  right: 0;
+}
+
+.scroll-indicator span {
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.scroll-indicator.prominent span {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Dark mode styles for scroll indicators */
+html.dark-mode .scroll-indicator {
+  background-color: var(--key-bg-color);
+  color: var(--key-text-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+html.dark-mode .scroll-indicator.left {
+  background-image: linear-gradient(to right, transparent, var(--key-bg-color) 40%);
+}
+
+html.dark-mode .scroll-indicator.right {
+  background-image: linear-gradient(to left, transparent, var(--key-bg-color) 40%);
+}
+
+html.dark-mode .scroll-indicator.prominent {
+  background-color: var(--present-color);
+  color: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+html.dark-mode .scroll-indicator.prominent.left {
+  background-image: linear-gradient(to right, transparent, var(--present-color) 40%);
+}
+
+html.dark-mode .scroll-indicator.prominent.right {
+  background-image: linear-gradient(to left, transparent, var(--present-color) 40%);
+}
+
+/* Remove the old pulse animations */
+@keyframes pulse {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-prominent {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Adjust indicators for scrollable area */
+@media (max-width: 599px) {
+  /* Position scroll indicators to be visible over the gradients */
+  .scroll-indicator.left {
+    z-index: 1001;
+  }
+  
+  .scroll-indicator.right {
+    z-index: 1001;
+  }
+  
+  /* Remove the existing gradients that might conflict with our indicators */
+  .game-board-wrapper:after,
+  .game-board-wrapper:before {
+    width: 10px;
+  }
+}
+
+/* Make sure indicators don't appear outside the actual game area */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    /* Adjust position for smaller screens */
+    top: 50%;
+  }
+}
+
+@media (min-width: 769px) {
+  .scroll-indicator {
+    /* Center in the game board on larger screens */
+    top: 50%;
+  }
+  
+  .scroll-indicator.left {
+    left: calc(50% - 400px);
+    right: auto;
+  }
+  
+  .scroll-indicator.right {
+    right: calc(50% - 400px);
+    left: auto;
+  }
+}
+
+/* Enable scrolling on desktop for long words */
+@media (min-width: 600px) {
+  .game-board-wrapper.is-scrollable {
+    overflow-x: auto;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    position: relative;
+  }
+  
+  .game-board-wrapper.is-scrollable::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+  }
+  
+  /* Special styling for desktop scroll indicators */
+  .scroll-indicator.desktop {
+    position: fixed;
+    top: 45%;
+    height: 70px;
+    width: 22px;
+    border-radius: 50px;
+    background-color: var(--key-bg-color);
+    color: var(--key-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0; /* Hide by default */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    cursor: default;
+  }
+  
+  .scroll-indicator.desktop span {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 600;
+  }
+  
+  .game-board-wrapper.is-scrollable .scroll-indicator.desktop {
+    opacity: 0.4; /* Less prominent on desktop */
+  }
+  
+  .game-board-wrapper.is-scrollable:hover .scroll-indicator.desktop {
+    opacity: 0.8; /* More visible on hover */
+  }
+  
+  /* Desktop arrow positions */
+  .scroll-indicator.desktop.left {
+    left: max(calc(50% - 350px - 30px), 10px);
+  }
+  
+  .scroll-indicator.desktop.right {
+    right: max(calc(50% - 350px - 30px), 10px);
+  }
+  
+  /* Desktop dark mode adjustments */
+  html.dark-mode .scroll-indicator.desktop {
+    background-color: rgba(100, 100, 100, 0.8);
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Only show scroll indicators when content is actually scrollable */
+.game-board-wrapper.is-scrollable .scroll-indicator {
+  opacity: 0.6;
+}
+
+/* Specific styles for mobile scroll indicators */
+.scroll-indicator.mobile {
+  position: fixed; /* Stick to viewport */
+  top: 45%;
+  height: 60px;
+  width: 18px;
+  border-radius: 12px;
+  background-color: var(--key-bg-color);
+  color: var(--key-text-color);
+}
+
+/* Add smooth scrolling on desktop */
+@media (min-width: 600px) {
+  .game-board-wrapper {
+    scroll-behavior: smooth;
+  }
+  
+  /* Enhance scrolling experience with better spacing */
+  .game-board {
+    padding: 0 2rem; /* Add more padding on desktop */
+  }
+}
+
+/* Make sure the scroll effect is ONLY on words > 6 letters */
+.game-board.short-word {
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Desktop indicator hover and focus states */
+@media (min-width: 600px) {
+  .scroll-indicator.desktop:hover,
+  .scroll-indicator.desktop:focus {
+    opacity: 0.9 !important;
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    outline: none;
+  }
+
+  .scroll-indicator.desktop:active {
+    opacity: 1 !important;
+    transform: scale(0.95);
+  }
+
+  /* Add a tooltip explaining the keyboard shortcut */
+  .scroll-indicator.desktop:hover::after {
+    content: 'Alt + ←→';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--key-bg-color);
+    color: var(--key-text-color);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0.9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.scroll-instruction {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin: 5px 0 15px;
+  display: none;
+}
+
+@media (min-width: 600px) {
+  /* Only show scroll instruction on desktop when needed */
+  .game-board-wrapper.is-scrollable + .scroll-instruction {
+    display: block;
+  }
+}
