@@ -60,6 +60,21 @@
     "length": 8
   },
   {
+    "word": "let him cook",
+    "definition": "A phrase encouraging someone to continue doing what they're doing without interference, implying they’re on the right track or about to do something impressive.",
+    "length": 12
+  },
+  {
+    "word": "bing chilling",
+    "definition": "A Chinese term for 'ice cream' (bīngqílín), popularized by actor John Cena in promoting his movie; also used as an interjection referencing Cena or the Chinese language.",
+    "length": 13
+  },
+  {
+    "word": "doomscrolling",
+    "definition": "The act of incessantly scrolling through negative or depressing online content, leading to mental exhaustion and a sense of hopelessness. :contentReference[oaicite:0]{index=0}",
+    "length": 13
+  },
+  {
     "word": "bruh",
     "definition": "Term used to express shock, embarrassment, or disappointment.",
     "length": 4
@@ -128,6 +143,11 @@
     "word": "delusionship",
     "definition": "A relationship in which someone holds unrealistic or overly idealistic beliefs. A person who holds such beliefs is called a \"delulu\".",
     "length": 12
+  },
+  {
+    "word": "delulu",
+    "definition": "A shorthand for 'delusional,' used to describe someone with unrealistic or obsessive beliefs—common in fan and K-pop cultures.",
+    "length": 6
   },
   {
     "word": "drip",
@@ -333,6 +353,21 @@
     "word": "oomf",
     "definition": "Abbreviation for \"One of My Followers\".",
     "length": 4
+  },
+  {
+    "word": "red pill",
+    "definition": "A metaphor for waking up to harsh or hidden truths about society—drawn from The Matrix. Used to denote rejecting mainstream narratives in favor of a controversial reality.",
+    "length": 8
+  },
+  {
+    "word": "blue pill",
+    "definition": "Represents the choice to remain in comfortable ignorance and stay trapped in the Matrix, refusing to see the harsh truth.",
+    "length": 9
+  },
+  {
+    "word": "black pill",
+    "definition": "Describes a nihilistic, deeply pessimistic worldview that asserts social or personal change is impossible, often leading to fatalism.",
+    "length": 10
   },
   {
     "word": "opp",
@@ -545,6 +580,11 @@
     "length": 4
   },
   {
+    "word": "cheugy",
+    "definition": "Used to describe something outdated or trying too hard to be trendy—often applied to millennial aesthetics.",
+    "length": 6
+  },
+  {
     "word": "only in ohio",
     "definition": "A meme implying that strange or bizarre events supposedly only happen in Ohio.",
     "length": 12
@@ -593,6 +633,11 @@
     "word": "sigma male",
     "definition": "A term from manosphere communities describing a lone wolf type who is successful but doesn't conform to traditional social hierarchies.",
     "length": 10
+  },
+  {
+    "word": "beta male",
+    "definition": "A term describing a man who is perceived as passive, cooperative, and less dominant, often characterized by traits such as sensitivity and reliability.",
+    "length": 9
   },
   {
     "word": "alpha male",
