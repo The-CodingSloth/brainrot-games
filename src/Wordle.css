@@ -550,15 +550,13 @@
 }
 
 .toast-container {
-  position: fixed;
-  top: 60px;
+  position: relative;
   left: 0;
   right: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1001;
   pointer-events: none;
 }
 
