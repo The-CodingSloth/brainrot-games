@@ -113,6 +113,7 @@ function App() {
 
     if (effectiveGuessLength !== effectiveTargetLength) {
       setShowToast(true);
+      gameBoardRef.current?.shakeRow(currentRow);
       // Hide toast after 2 seconds
       setTimeout(() => setShowToast(false), 2000);
       return;

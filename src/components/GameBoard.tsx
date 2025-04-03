@@ -82,6 +82,7 @@ interface GameBoardProps {
 
 export interface GameBoardRef {
   revealRow: (row: number) => void;
+  shakeRow: (row: number) => void;
 }
 
 const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
@@ -92,6 +93,8 @@ const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
     const wordLength = targetWord.length;
     // Track which row is currently having its letters revealed
     const [revealingRow, setRevealingRow] = useState<number | null>(null);
+    const [shakingRow, setShakingRow] = useState<number | null>(null);
+    const isShakingRef = useRef<boolean>(false);
     // Store tile states (correct, present, absent) for each position
     const [tileStates, setTileStates] = useState<{ [key: string]: string }>({});
     // Track which specific tile (column) is being revealed within the revealing row
@@ -132,6 +135,17 @@ const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
         setRevealingRow(row);
         // Start with the first tile (column 0)
         setRevealingTile(0);
+      },
+      shakeRow: (rowIndex: number) => {
+        if (isShakingRef.current) return;
+      
+        isShakingRef.current = true;
+        setShakingRow(rowIndex);
+      
+        setTimeout(() => {
+          setShakingRow(null);
+          isShakingRef.current = false;
+        }, 500);
       },
     }));
 
@@ -669,7 +683,7 @@ const GameBoard = forwardRef<GameBoardRef, GameBoardProps>(
               .map((_, rowIndex) => (
                 <motion.div
                   key={rowIndex}
-                  className="row"
+                  className={`row ${rowIndex === shakingRow ? 'shake' : ''}`}
                   role="row"
                   ref={(el) => { rowRefs.current[rowIndex] = el; }}
                   aria-rowindex={rowIndex + 1}
