@@ -265,7 +265,6 @@
   height: 3rem;
   border-radius: 4px;
   background-color: var(--key-bg-color);
-  color: var(--key-text-color);
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
@@ -274,12 +273,70 @@
   transition: all 0.3s ease;
   border: none;
   touch-action: manipulation;
+  transition: background-color 0.3s ease, transform 0.1s ease !important;
 }
 
 .key.wide {
   flex: 1.5;
   font-size: 0.7rem;
 }
+
+.keyboard-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1.5rem;
+}
+
+.rgb-toggle {
+  position: static;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.brainrot-active {
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.brainrot-active .key {
+  font-weight: 900;
+  text-shadow: 0 0 5px white;
+  border: none !important;
+}
+
+.brainrot-active .keyboard-row {
+  margin: 10px 0;
+}
+
+.keyboard.earthquake {
+  animation: earthquake 0.3s linear infinite;
+}
+
+@keyframes earthquake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-1deg); }
+  50% { transform: translateX(5px) rotate(1deg); }
+  75% { transform: translateX(5px) rotate(-1deg); }
+}
+
+/* Epilepsy warning mode (optional) */
+.brainrot-active .key {
+  animation: 
+    colorPulse 0.5s infinite alternate,
+    float 2s infinite ease-in-out;
+}
+
+@keyframes colorPulse {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
 
 /* Small mobile styles for keyboard */
 @media (max-width: 350px) {
