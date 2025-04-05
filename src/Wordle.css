@@ -158,18 +158,18 @@
   .wordle-container {
     padding: 0 0.25rem;
   }
-  
+
   .tile {
     width: 35px;
     height: 35px;
     font-size: 1.2rem;
     border-width: 1.5px;
   }
-  
+
   .game-board-wrapper {
     margin-bottom: 10px;
   }
-  
+
   .row {
     gap: 4px;
   }
@@ -286,18 +286,18 @@
   .keyboard {
     margin: 0.25rem auto;
   }
-  
+
   .keyboard-row {
     margin: 0.15rem 0;
     gap: 0.15rem;
   }
-  
+
   .key {
     height: 2.75rem;
     font-size: 0.7rem;
     padding: 0.15rem 0;
   }
-  
+
   .key.wide {
     font-size: 0.6rem;
   }
@@ -566,8 +566,8 @@
 }
 
 .toast-container {
-  position: fixed;
-  top: 60px;
+  position: sticky;
+  top: 0;
   left: 0;
   right: 0;
   width: 100%;
@@ -699,25 +699,27 @@
     padding-top: 3.5rem !important;
     padding-bottom: 1.5rem !important;
   }
-  
+
   .definition {
     font-size: 0.8rem;
     padding: 0.5rem;
     margin: 0.25rem 0 0.5rem;
   }
-  
+
   .title {
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
   }
-  
+
   .game-board {
     margin-bottom: 8px;
   }
 }
 
 /* Ensure buttons are easy to tap on mobile */
-.key, .modal-button, .nav-button {
+.key,
+.modal-button,
+.nav-button {
   min-height: 44px; /* Minimum tap target size recommended by WCAG */
 }
 
@@ -738,8 +740,20 @@
   will-change: scroll-position;
   -webkit-overflow-scrolling: touch;
   /* Add visual indicators that content is scrollable */
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
 }
 
 .game-board-wrapper.mobile .game-board {
@@ -749,13 +763,12 @@
 
 /* For very long words on mobile, add a hint that you can scroll horizontally */
 @media (max-width: 599px) {
-  
   /* Position scroll indicators to be visible over the gradients */
   .scroll-indicator.left {
     left: 8px;
     z-index: 30;
   }
-  
+
   .scroll-indicator.right {
     right: 8px;
     z-index: 30;
@@ -764,7 +777,7 @@
 
 /* For extremely long words (more than 14 letters), adjust tile size on mobile */
 @media (max-width: 599px) {
-  .tile:nth-child(n+15) {
+  .tile:nth-child(n + 15) {
     width: 35px;
     height: 35px;
     font-size: 1.2rem;
@@ -811,14 +824,22 @@
   left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  background-image: linear-gradient(to right, transparent, var(--key-bg-color) 40%);
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--key-bg-color) 40%
+  );
 }
 
 .scroll-indicator.right {
   right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  background-image: linear-gradient(to left, transparent, var(--key-bg-color) 40%);
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    var(--key-bg-color) 40%
+  );
 }
 
 /* For very small screens, adjust indicator positioning */
@@ -849,11 +870,19 @@ html.dark-mode .scroll-indicator {
 }
 
 html.dark-mode .scroll-indicator.left {
-  background-image: linear-gradient(to right, transparent, var(--key-bg-color) 40%);
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--key-bg-color) 40%
+  );
 }
 
 html.dark-mode .scroll-indicator.right {
-  background-image: linear-gradient(to left, transparent, var(--key-bg-color) 40%);
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    var(--key-bg-color) 40%
+  );
 }
 
 html.dark-mode .scroll-indicator.prominent {
@@ -863,11 +892,19 @@ html.dark-mode .scroll-indicator.prominent {
 }
 
 html.dark-mode .scroll-indicator.prominent.left {
-  background-image: linear-gradient(to right, transparent, var(--present-color) 40%);
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--present-color) 40%
+  );
 }
 
 html.dark-mode .scroll-indicator.prominent.right {
-  background-image: linear-gradient(to left, transparent, var(--present-color) 40%);
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    var(--present-color) 40%
+  );
 }
 
 /* Remove the old pulse animations */
@@ -907,11 +944,11 @@ html.dark-mode .scroll-indicator.prominent.right {
   .scroll-indicator.left {
     z-index: 1001;
   }
-  
+
   .scroll-indicator.right {
     z-index: 1001;
   }
-  
+
   /* Remove the existing gradients that might conflict with our indicators */
   .game-board-wrapper:after,
   .game-board-wrapper:before {
@@ -932,12 +969,12 @@ html.dark-mode .scroll-indicator.prominent.right {
     /* Center in the game board on larger screens */
     top: 50%;
   }
-  
+
   .scroll-indicator.left {
     left: calc(50% - 400px);
     right: auto;
   }
-  
+
   .scroll-indicator.right {
     right: calc(50% - 400px);
     left: auto;
@@ -952,11 +989,11 @@ html.dark-mode .scroll-indicator.prominent.right {
     -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
     position: relative;
   }
-  
+
   .game-board-wrapper.is-scrollable::-webkit-scrollbar {
     display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
   }
-  
+
   /* Special styling for desktop scroll indicators */
   .scroll-indicator.desktop {
     position: fixed;
@@ -976,30 +1013,30 @@ html.dark-mode .scroll-indicator.prominent.right {
     transition: opacity 0.2s ease;
     cursor: default;
   }
-  
+
   .scroll-indicator.desktop span {
     font-size: 1.5rem;
     line-height: 1;
     font-weight: 600;
   }
-  
+
   .game-board-wrapper.is-scrollable .scroll-indicator.desktop {
     opacity: 0.4; /* Less prominent on desktop */
   }
-  
+
   .game-board-wrapper.is-scrollable:hover .scroll-indicator.desktop {
     opacity: 0.8; /* More visible on hover */
   }
-  
+
   /* Desktop arrow positions */
   .scroll-indicator.desktop.left {
     left: max(calc(50% - 350px - 30px), 10px);
   }
-  
+
   .scroll-indicator.desktop.right {
     right: max(calc(50% - 350px - 30px), 10px);
   }
-  
+
   /* Desktop dark mode adjustments */
   html.dark-mode .scroll-indicator.desktop {
     background-color: rgba(100, 100, 100, 0.8);
@@ -1029,7 +1066,7 @@ html.dark-mode .scroll-indicator.prominent.right {
   .game-board-wrapper {
     scroll-behavior: smooth;
   }
-  
+
   /* Enhance scrolling experience with better spacing */
   .game-board {
     padding: 0 2rem; /* Add more padding on desktop */
