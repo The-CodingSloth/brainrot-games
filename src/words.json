@@ -829,19 +829,9 @@
     "definition": "Lyrics from Drake's song \"In My Feelings,\" which became part of a viral dance challenge."
   },
   {
-    "word": "Ohio gyatt",
-    "definition": "A meme combining the absurdity of Ohio with admiration for someone's physique (gyatt = \"goddamn\").",
-    "length": 10
-  },
-  {
     "word": "Skibidi Rizz",
     "definition": "The chaotic charm of someone who embodies the 'Skibidi Toilet' meme energy while being flirtatious.",
     "length": 12
-  },
-  {
-    "word": "Gyatt in Ohio",
-    "definition": "A surreal meme scenario where something inexplicably attractive happens in Ohio.",
-    "length": 13
   },
   {
     "word": "Lobotomy core",
@@ -849,54 +839,14 @@
     "length": 13
   },
   {
-    "word": "Bing Chilling rizz",
-    "definition": "The inexplicable charm of someone who unironically enjoys John Cena’s 'Bing Chilling' meme.",
-    "length": 18
-  },
-  {
     "word": "Fanumbrained",
     "definition": "Acting irrationally due to excessive exposure to Kai Cenat’s \"Fanum Tax\" meme lore.",
     "length": 12
   },
   {
-    "word": "Glizzmaxxing",
-    "definition": "The pursuit of peak hot dog-related excellence (from \"glizzy\" + \"maxxing\").",
-    "length": 12
-  },
-  {
-    "word": "Ohioan rizzard",
-    "definition": "Someone whose charm is as inexplicable as Ohio memes.",
-    "length": 14
-  },
-  {
-    "word": "Skibidi Ohio L",
-    "definition": "A catastrophic failure (L) that feels like it belongs in the Skibidi Toilet universe.",
-    "length": 14
-  },
-  {
-    "word": "Grimace shake W",
-    "definition": "An unexpected victory (W) achieved through sheer Grimace shake energy.",
-    "length": 16
-  },
-  {
     "word": "Gyattmaxxing",
     "definition": "The relentless pursuit of a perfect physique (from \"gyatt\" + \"maxxing\").",
     "length": 12
-  },
-  {
-    "word": "Bussin’ Ohio gyatt",
-    "definition": "A phrase describing something so good it defies Ohio’s cursed reputation.",
-    "length": 18
-  },
-  {
-    "word": "Sigma Skibidi",
-    "definition": "A lone wolf who thrives in the chaos of the Skibidi Toilet universe.",
-    "length": 13
-  },
-  {
-    "word": "Delulu Ohioan",
-    "definition": "Someone who believes Ohio is normal (delusional + Ohio memes).",
-    "length": 13
   },
   {
     "word": "Rizzler",
@@ -909,41 +859,6 @@
     "length": 11
   },
   {
-    "word": "Skibidive",
-    "definition": "To fully immerse oneself in Skibidi Toilet meme lore.",
-    "length": 9
-  },
-  {
-    "word": "Ohio-pilled",
-    "definition": "Being indoctrinated into believing Ohio is the center of absurdity.",
-    "length": 11
-  },
-  {
-    "word": "Gyattification",
-    "definition": "The process of becoming unnaturally obsessed with someone’s physique.",
-    "length": 14
-  },
-  {
-    "word": "Bussin’ bussy",
-    "definition": "A paradoxical phrase combining food praise (\"bussin\") with slang for male anatomy.",
-    "length": 13
-  },
-  {
-    "word": "Skibidi grindset",
-    "definition": "A work ethic fueled by pure chaos (Skibidi Toilet + sigma grindset).",
-    "length": 16
-  },
-  {
-    "word": "Ohio glazing",
-    "definition": "Excessive praise for something only Ohio would find impressive.",
-    "length": 12
-  },
-  {
-    "word": "Gyatt rizzard",
-    "definition": "Someone whose charm is solely derived from their physique.",
-    "length": 13
-  },
-  {
     "word": "Skibidi W",
     "definition": "A victory so absurd it feels like a Skibidi Toilet plot twist.",
     "length": 9
@@ -951,6 +866,41 @@
   {
     "word": "Ohio L",
     "definition": "A failure so bizarre it could only happen in Ohio.",
+    "length": 6
+  },
+  {
+    "word": "Zesty",
+    "definition": "Someone who is flamboyant or gay",
+    "length": 5
+  }, 
+  {
+    "word": "Fine Shyt",
+    "definition": "Refers to an attractive woman",
+    "length": 9
+  },
+  {
+    "word": "unc",
+    "definition": "Slang for \"uncle,\" often used to refer to an older male figure",
+    "length": 3
+  }, 
+  {
+    "word": "Oil Up",
+    "definition": "Slang for preparing intensely, often in the context of bodybuilding or physical preparation.",
+    "length": 6
+  },
+  {
+    "word": "NPC",
+    "definition": "Stands for \"non-player character,\" used to describe someone who follows the crowd or lacks individuality",
+    "length": 3
+  },
+  {
+    "word": "Munch",
+    "definition": "Slang for someone who is overly eager to please or excessively praises others, also can refer to eating",
+    "length": 5
+  },
+  {
+    "word": "Caseoh",
+    "definition": "A popular streamer known for his size and meme status.",
     "length": 6
   }
 ]
