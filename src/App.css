@@ -7,7 +7,7 @@
   max-width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
+  overflow-x: clip; /* Prevent horizontal scrolling on mobile */
 }
 
 .app {
@@ -20,7 +20,7 @@
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
+  overflow-x: clip; /* Prevent horizontal scrolling on mobile */
   position: relative;
   box-sizing: border-box;
   padding-bottom: 1rem; /* Add padding to prevent footer overlap */
@@ -29,8 +29,8 @@
 /* On very small screens, ensure the content has enough space to fit the footer */
 @media (max-height: 500px) {
   .app {
-  padding: 0;
-  min-height: calc(100vh + 100px);
+    padding: 0;
+    min-height: calc(100vh + 100px);
   }
 }
 
@@ -158,7 +158,7 @@
   .footer-text {
     margin-right: 0.5rem;
   }
-  
+
   .footer-links {
     flex-wrap: nowrap;
   }
@@ -168,31 +168,31 @@
   .footer {
     padding: 0.75rem 0;
   }
-  
+
   .footer-wrapper {
     padding: 0 0.5rem;
   }
-  
+
   .footer-content {
     padding: 0;
     gap: 0.5rem;
     width: 100%;
   }
-  
+
   .footer-links {
     width: 100%;
     justify-content: space-around;
     gap: 0.75rem;
     padding: 0 0.25rem;
   }
-  
+
   .footer-text {
     font-size: 0.8rem;
     padding: 0 0.5rem;
     max-width: 280px;
     text-align: center;
   }
-  
+
   /* Add active states for touch devices */
   .footer-link:active {
     color: var(--correct-color);
@@ -205,11 +205,11 @@
   .footer-text {
     font-size: 0.75rem;
   }
-  
+
   .footer-links {
     gap: 0.5rem;
   }
-  
+
   .footer-link {
     font-size: 0.9rem;
   }
