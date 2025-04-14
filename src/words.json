@@ -821,7 +821,15 @@
   },
   {
     "word": "kiki do you love me",
-    "definition": "Lyrics from Drake's song \"In My Feelings,\" which became part of a viral dance challenge."
+    "definition": "Lyrics from Drake's song \"In My Feelings,\" which became part of a viral dance challenge.",
+    "length": 19
+
+  }, 
+  {
+    "word": "womp womp",
+    "definition":"used as an expression of mock disappointment, often for humorous effect.",
+    "length":11
+
   },
   {
     "word": "hawk tuah",
